@@ -1,24 +1,22 @@
-require('./mongo')
-const mongoose = require('mongoose')
-const User = require('./model')
+const express = require('express')
+const cors = require('cors')
+require('./mongoConnect')
 
-const newUser = {
-    name: 'mudryk',
-    number: 237920934,
-    email: 'mm@mail.com',
-    hobbies: ['dancing', 'football', 'music']
-}
+const userRouter = require('./routes/userRoutes')
 
-async function save() {
-    await User.insertMany(newUser)
-    console.log(newUser)
-    mongoose.connection.close()
-}
-// save()
+const app = express()
 
-async function search(){
-    const result = await User.find({})
-    console.log(result)
-    mongoose.connection.close()
-}
-search()
+app.use(cors())
+app.use(express.json())
+// homepage welcome
+app.use('/users', userRouter)
+
+// routing to users
+app.get('/', async(req, res) => {
+    res.json({message: 'welcome to user homepage'})
+})
+
+
+const PORT = process.env.PORT
+app.listen(PORT, () =>{
+    console.log(`Server running on port ${PORT}`)})
