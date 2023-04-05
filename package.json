@@ -1,0 +1,34 @@
+{
+  "name": "user_data_management",
+  "version": "1.0.0",
+  "description": "a crud operation app for user data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayushchauhan101/user_data_management.git"
+  },
+  "keywords": [
+    "express",
+    "mongoose",
+    "react",
+    "api"
+  ],
+  "author": "ayush",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ayushchauhan101/user_data_management/issues"
+  },
+  "homepage": "https://github.com/ayushchauhan101/user_data_management#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.3",
+    "mongoose-validator": "^2.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
